@@ -15,3 +15,10 @@ function findAdjacentNodes(node, vertices, edges) {
     })
     return adjacents.filter(adj => {return adj.distance != 0})
 }
+
+function markDistanceAndPredecessor(firstNode, adjacentNodes) {
+    adjacentNodes.forEach(node => {
+        node.distance = 1 + firstNode.distance
+        node.predecessor = firstNode
+    })
+}
