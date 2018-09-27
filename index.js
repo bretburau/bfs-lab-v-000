@@ -13,5 +13,5 @@ function findAdjacentNodes(node, vertices, edges) {
           adjacents.push(vertices.find((e) => {return e.name === edge[0]}))
         }
     })
-  return adjacents;
+    return adjacents.filter(adj => {return adj.distance != 0})
 }
